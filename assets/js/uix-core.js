@@ -3,6 +3,7 @@ var conduitApp = {},
 	conduitRegisterApps,
 	conduitModal,
 	conduitModalSave,
+	conduitGenID,
 	conduitGetData;
 
 !( jQuery( function($){
@@ -258,7 +259,7 @@ var conduitApp = {},
 			}
 			conduitApp[ app ].app.html( coduitTemplates[ app ]( data ) );
 		}
-		$(window).trigger('modal.init');
+		$(window).trigger('modal.init');		
 	}
 
 	conduitSetNode = function( node, app, data ){
@@ -272,10 +273,18 @@ var conduitApp = {},
 		$.extend( true, conduitApp[ app ].data, new_nodes );
 		conduitBuildUI( app );		
 	}
-
+	conduitGenID = function(){
+		var d = new Date().getTime();
+		var id = 'ndxxxxxxxx'.replace(/[xy]/g, function(c) {
+			var r = (d + Math.random()*16)%16 | 0;
+			d = Math.floor(d/16);
+			return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+		});
+		return id;
+	}
 	conduitAddNode = function( node, app, data ){
 
-		var id = 'nd' + Math.round(Math.random() * 99866) + Math.round(Math.random() * 99866),
+		var id = conduitGenID(),
 			newnode = { "_id" : id },
 			nodes = node.data ? node.data('addNode').split('.') : node.split('.'),
 			node_default = data ? data : node.data('nodeDefault'),
@@ -399,6 +408,10 @@ var conduitApp = {},
 
 	// initialize live sync rebuild
 	$(document).on('change', '[data-live-sync]', function(e){
+		var app = $(this).closest('[data-app]').data('app');
+		conduitSyncData( app );
+	});
+	$(document).on('click', 'button[data-live-sync]', function(e){
 		var app = $(this).closest('[data-app]').data('app');
 		conduitSyncData( app );
 	});

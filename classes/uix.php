@@ -369,7 +369,7 @@ class uix{
 				foreach( (array) $uix['tabs'] as $tab_slug => $tab ){ ?>
 					<div class="uix-tab-canvas" data-app="<?php echo esc_attr( $tab_slug ); ?>"></div>
 					<script type="text/html" data-template="<?php echo esc_attr( $tab_slug ); ?>">
-						<h4><?php 
+						<?php 
 							if( !empty( $tab['page_title'] ) ){ echo '<h4>' . $tab['page_title']; }
 							if( !empty( $tab['page_description'] ) ){ ?> <small><?php echo $tab['page_description']; ?></small> <?php } 
 							if( !empty( $tab['page_title'] ) ){ echo '</h4>'; }
@@ -403,7 +403,7 @@ class uix{
 					include $uix['template'];
 				}
 			}
-			?>
+			?>			
 		</div>
 
 		<script type="text/html" data-template="__notice">
