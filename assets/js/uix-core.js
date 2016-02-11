@@ -1,3 +1,7 @@
+/*!
+This is a prototype of conduit. It still needs a full refactoring.
+This is simply to get the concepts into working order. So ye, I need to work on this still.
+*/
 var conduitApp = {},
 	coduitTemplates = {},
 	conduitRegisterApps,

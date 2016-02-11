@@ -21,7 +21,7 @@ return array(
 		'save_button' =>  'Save Changes',                                                // If the page required saving settings, Set the text here.
 		'styles'      =>  array(                                                        // if the page has additional styles and scripts, they can be declared here
 			// additional styles are an array of handle => src, use just the handle for registered styles
-			'prism'	=>	UIX_PLUGIN_URL . 'demo/prism.css',
+			'prism'	=>	UIX_PLUGIN_URL . 'demo/prism.css', // including prism for the demo only. not needed.
 		),
 		'scripts'     =>  array(                                                        // As with styles, scripts can be delcared the same way
 			'prism'	=>	UIX_PLUGIN_URL . 'demo/prism.js',
