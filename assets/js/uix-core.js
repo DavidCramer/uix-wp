@@ -259,7 +259,7 @@ var conduitApp = {},
 			}
 			conduitApp[ app ].app.html( coduitTemplates[ app ]( data ) );
 		}
-		$(window).trigger('modal.init');		
+		$(window).trigger('modal.init');
 	}
 
 	conduitSetNode = function( node, app, data ){
