@@ -1,0 +1,20 @@
+{
+  "name": "uix-example",
+  "namespace": "myplugin",
+  "version": "1.0.0",
+  "description": "UI eXample for using Javascript User Interfaces",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Desertsnowman/uix-example"
+  },
+  "author": "David Cramer",
+  "license": "GPLv2+",
+  "bugs": {
+    "url": "https://github.com/Desertsnowman/uix-example/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-git": "^0.3.3",
+    "grunt-shell": "^1.1.1"
+  }
+}
