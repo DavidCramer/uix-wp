@@ -1,18 +1,21 @@
 {
+	// check these values to your project
 	"name"			:"uix-example",
 	"namespace"		: "myplugin",
 	"slug"			: "MYPLGN",
 	"version"		: "1.0.0",
 	"description"	: "UI eXample for using Javascript User Interfaces",
-	"repository"	: {
-		"type"		: "git",
-		"url"		: "https://github.com/Desertsnowman/uix-example"
-	},
 	"author"		: "David Cramer",
 	"url"			: "http://cramer.co.za",
 	"license"		: "GPLv2+",
+	
+	// Don't touch anything below
+	"repository"	: {
+		"type"		: "git",
+		"url"		: "https://github.com/Desertsnowman/uix-wp"
+	},
 	"bugs"			: {
-		"url"		: "https://github.com/Desertsnowman/uix-example/issues"
+		"url"		: "https://github.com/Desertsnowman/uix-wp/issues"
 	},
 	"devDependencies"	: {
 		"grunt"			: "~0.4.2",
