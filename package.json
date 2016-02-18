@@ -1,5 +1,5 @@
 {
-	// check these values to your project
+
 	"name"			:"uix-example",
 	"namespace"		: "myplugin",
 	"slug"			: "MYPLGN",
@@ -8,8 +8,8 @@
 	"author"		: "David Cramer",
 	"url"			: "http://cramer.co.za",
 	"license"		: "GPLv2+",
-	
-	// Don't touch anything below
+
+
 	"repository"	: {
 		"type"		: "git",
 		"url"		: "https://github.com/Desertsnowman/uix-wp"
