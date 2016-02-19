@@ -1,10 +1,11 @@
 {
 
-	"name"			:"uix-example",
+	"name"			: "my-plugin",
 	"namespace"		: "myplugin",
+	"plugin_name"		: "My Plugin",
+	"description"		: "My Plugins Description",
 	"slug"			: "MYPLGN",
 	"version"		: "1.0.0",
-	"description"	: "UI eXample for using Javascript User Interfaces",
 	"author"		: "David Cramer",
 	"url"			: "http://cramer.co.za",
 	"license"		: "GPLv2+",
