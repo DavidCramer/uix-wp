@@ -4,7 +4,7 @@
 	"namespace"		: "myplugin",
 	"plugin_name"		: "My Plugin",
 	"description"		: "My Plugins Description",
-	"slug"			: "MYPLGN",
+	"prefix"		: "MYPLGN",
 	"version"		: "1.0.0",
 	"author"		: "David Cramer",
 	"url"			: "http://cramer.co.za",
