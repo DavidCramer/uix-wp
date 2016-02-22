@@ -18,6 +18,11 @@ return array(
 		'capability'  =>  'manage_options',                                              // required capability to access page
 		'icon'        =>  'dashicons-book-alt',                                          // Icon or image to be used on admin menu
 		'save_button' =>  'Save Changes',                                                // If the page required saving settings, Set the text here.
+		'base_color'  => '#438373',
+		'modals'	  =>  array(
+			//modal templates to be included as an array. slug => file
+			'project'	=> 'includes/templates/project.php',
+		),
 		'tabs'        =>  array(                                                        // tabs array are for setting the tab / section templates
 			// each array element is a tab with the key as the slug that will be the saved object property
 			'general'		=> array(
@@ -30,6 +35,12 @@ return array(
 
 				),
 				'default'	 => true                                                 // defines which is the default tab
+			),
+			'modals'		=> array(
+				'page_title'        => 'Modals',                                  // the tab page title 
+				'page_description'  => 'This is an example of using modals',                   // the tab description
+				'menu_title'        => 'Modals',                                           // the title of the tab menu item
+				'template'          => 'includes/templates/modals.php',           // the template to define the tab content and values
 			),
 		),
 		'help'	=> array(	// the wordpress contextual help is also included
