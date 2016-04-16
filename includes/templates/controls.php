@@ -15,17 +15,7 @@
 		<span class="uix-control-bar-action left">
 			<span class="dashicons dashicons-plus" data-add-node="item"></span>
 		</span>
-		<span class="uix-control-bar-action right">
-			<span class="dashicons dashicons-admin-generic"></span>
-		</span>
-		<span class="uix-control-bar-content"> This is a text line that is way to long for this box</span>
-		<span class="uix-control-bar-action right">
-			<button type="button" class="button">Button</button>
-		</span>
-
-		<span class="uix-control-bar-action right">
-			<button type="button" class="button button-small">Small</button>
-		</span>
+		<span class="uix-control-bar-content">UIX Control Bar</span>
 
 	</div>
 
@@ -37,17 +27,26 @@
 
 					{{#each item}}
 									
-						<div class="uix-control-bar item_{{_id}}">
-							{{:node_point}}				
-							<span class="uix-control-bar-action left">
-								<span class="dashicons dashicons-menu"></span>
-							</span>
+						<div class="uix-control-bar item_{{_id}} hover">
+							{{:node_point}}
 							<span class="uix-control-bar-content">
-								{{_id}}
+								ID: {{_id}}
+								{{#is @root/active_node not=_id}}
+									{{#if parts}}
+										<input type="hidden" name="{{:name}}[parts]" value="{{json parts}}">
+									{{/if}}
+								{{/is}}
 							</span>
+
+							<label class="uix-control-bar-action right">
+								<span class="dashicons dashicons-arrow-right"></span>
+								<input class="hidden" type="radio" name="active_node" data-live-sync="true" value="{{_id}}" {{#is @root/active_node value=_id}}checked="checked"{{/is}}>
+							</label>
+
 							<span class="uix-control-bar-action right">
-								<span class="dashicons dashicons-arrow-right-alt2" data-remove-element=".item_{{_id}}"></span>
+								<span class="dashicons dashicons-no" data-remove-element=".item_{{_id}}"></span>
 							</span>
+
 						</div>
 
 					{{/each}}
@@ -55,16 +54,17 @@
 				</div>
 				<div class="col-sm-6">
 
+				{{#find item active_node}}
 
 					<div class="uix-control-box">
 						<div class="uix-control-bar">
 							<span class="uix-control-bar-action left">
-								<span class="dashicons dashicons-plus" data-add-node="parts"></span>
+								<span class="dashicons dashicons-plus" data-add-node="{{_node_point}}.parts"></span>
 							</span>
 							<span class="uix-control-bar-action right">
 								<span class="dashicons dashicons-admin-generic"></span>
 							</span>
-							<span class="uix-control-bar-content"> This is a text line that is way to long for this box</span>
+							<span class="uix-control-bar-content">View Node: {{_id}}</span>
 							<span class="uix-control-bar-action right">
 								<button type="button" class="button">Button</button>
 							</span>
@@ -91,10 +91,7 @@
 									<input type="text" class="" value="{{_id}}">
 									
 									<span class="uix-control-bar-action right">
-										<span class="dashicons dashicons-arrow-right" data-remove-element=".item_{{_id}}"></span>
-									</span>										
-									<span class="uix-control-bar-action right">
-										<span class="dashicons dashicons-arrow-right-alt2" data-remove-element=".item_{{_id}}"></span>
+										<span class="dashicons dashicons-no" data-remove-element=".item_{{_id}}"></span>
 									</span>
 								</div>
 
@@ -103,6 +100,8 @@
 						</div>
 
 					</div>
+
+					{{/find}}
 
 				</div>
 
