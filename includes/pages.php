@@ -42,6 +42,12 @@ return array(
 				'menu_title'        => 'Modals',                                           // the title of the tab menu item
 				'template'          => 'includes/templates/modals.php',           // the template to define the tab content and values
 			),
+			'controls'		=> array(
+				'page_title'        => 'Controls',                                  // the tab page title 
+				'page_description'  => 'This is an example of built in controls',                   // the tab description
+				'menu_title'        => 'Controls',                                           // the title of the tab menu item
+				'template'          => 'includes/templates/controls.php',           // the template to define the tab content and values
+			),
 		),
 		'help'	=> array(	// the wordpress contextual help is also included
 			// key is the help slug
