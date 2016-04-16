@@ -27,7 +27,7 @@
 
 					{{#each item}}
 									
-						<div class="uix-control-bar item_{{_id}} hover">
+						<div class="uix-control-bar item_{{_id}} hover {{#is @root/active_node value=_id}}active{{/is}}">
 							{{:node_point}}
 							<span class="uix-control-bar-content">
 								ID: {{_id}}
