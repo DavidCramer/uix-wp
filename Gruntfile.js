@@ -68,18 +68,21 @@ module.exports = function (grunt) {
                 options: {
                     repository: 'https://github.com/Desertsnowman/UIX',
                     branch: 'v2',
-                    directory: 'uix'
+                    directory: 'uix-install'
                 }
             }
         },
         shell: {
             install: {
-                command: 'npm install --prefix ./uix'
+                command: 'npm install --prefix ./uix-install'
             },
             build: {
-                command: "grunt --slug=<%= pkg.namespace %> --base ./uix --gruntfile ./uix/GruntFile.js default"
+                command: "grunt --slug=<%= pkg.namespace %> --base ./uix-install --gruntfile ./uix-install/GruntFile.js default"
             }
-        }        
+        },
+        clean: {
+          build: ["../uix-install"],
+        }
     });
 
     //load modules
@@ -87,8 +90,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks( 'grunt-contrib-copy' );
     grunt.loadNpmTasks( 'grunt-git' );
     grunt.loadNpmTasks( 'grunt-text-replace' );
+    grunt.loadNpmTasks( 'grunt-contrib-clean' );
 
     //register default task
-    grunt.registerTask( 'default', [ 'copy', 'replace', 'gitclone', 'shell:install', 'shell:build' ] );
+    grunt.registerTask( 'default', [ 'copy', 'replace', 'gitclone', 'shell', 'shell', 'clean' ] );
 
 };
