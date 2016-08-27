@@ -3,16 +3,21 @@ module.exports = function (grunt) {
     
     grunt.initConfig({
         pkg     : grunt.file.readJSON( 'package.json' ),
-        copy: {
-            main: {
-                files:[
-                    {
-                        expand: true,
-                        cwd: 'src',
-                        src: '**',
-                        dest: '../'
-                    }
-                ]
+        gitclone: {
+            clone: {
+                options: {
+                    repository: 'https://github.com/Desertsnowman/UIX',
+                    branch: 'v2',
+                    directory: 'uix-install'
+                }
+            }
+        },
+        shell: {
+            install: {
+                command: 'npm install --prefix ./uix-install'
+            },
+            build: {
+                command: "grunt --slug=<%= pkg.namespace %> --base ./uix-install --gruntfile ./uix-install/GruntFile.js default"
             }
         },
         replace : {
@@ -66,24 +71,7 @@ module.exports = function (grunt) {
                     }                
                 ]
             }
-        },
-        gitclone: {
-            clone: {
-                options: {
-                    repository: 'https://github.com/Desertsnowman/UIX',
-                    branch: 'v2',
-                    directory: 'uix-install'
-                }
-            }
-        },
-        shell: {
-            install: {
-                command: 'npm install --prefix ./uix-install'
-            },
-            build: {
-                command: "grunt --slug=<%= pkg.namespace %> --base ./uix-install --gruntfile ./uix-install/GruntFile.js default"
-            }
-        },
+        },        
         clean: {
           installer: ["uix-install/**"],
         }
@@ -97,6 +85,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks( 'grunt-contrib-clean' );
 
     //register default task
-    grunt.registerTask( 'default', [ 'copy', 'replace', 'gitclone', 'shell', 'clean' ] );
+    grunt.registerTask( 'default', [ 'copy', 'replace', 'gitclone', 'shell', 'clean', 'replace' ] );
 
 };
