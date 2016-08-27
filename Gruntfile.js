@@ -20,46 +20,54 @@ module.exports = function (grunt) {
                 src: [ 'plugin.php' ],
                 overwrite: true,
                 replacements: [
-                {
-                    from: "{{namespace}}",
-                    to: "<%= pkg.namespace %>"
-                },
-                {
-                    from: "{{slug}}",
-                    to: "<%= pkg.slug %>"
-                },
-                {
-                    from: "{{prefix}}",
-                    to: "<%= pkg.prefix %>"
-                },
-                {
-                    from: "{{name}}",
-                    to: "<%= pkg.plugin_name %>"
-                },
-                {
-                    from: "{{description}}",
-                    to: "<%= pkg.description %>"
-                },
-                {
-                    from: "{{author}}",
-                    to: "<%= pkg.author %>"
-                },
-                {
-                    from: "{{url}}",
-                    to: "<%= pkg.url %>"
-                },
-                {
-                    from: "{{version}}",
-                    to: "<%= pkg.version %>"
-                }
+                    {
+                        from: "{{namespace}}",
+                        to: "<%= pkg.namespace %>"
+                    },
+                    {
+                        from: "{{slug}}",
+                        to: "<%= pkg.slug %>"
+                    },
+                    {
+                        from: "{{prefix}}",
+                        to: "<%= pkg.prefix %>"
+                    },
+                    {
+                        from: "{{name}}",
+                        to: "<%= pkg.plugin_name %>"
+                    },
+                    {
+                        from: "{{description}}",
+                        to: "<%= pkg.description %>"
+                    },
+                    {
+                        from: "{{author}}",
+                        to: "<%= pkg.author %>"
+                    },
+                    {
+                        from: "{{url}}",
+                        to: "<%= pkg.url %>"
+                    },
+                    {
+                        from: "{{version}}",
+                        to: "<%= pkg.version %>"
+                    },
+                    {
+                        from: 'uixv2',
+                        to: "<%= pkg.namespace %>"
+                    },
+                    {
+                        from: 'UIXV2',
+                        to: "<%= pkg.prefix %>"
+                    }                
                 ]
             }
-        }        
+        },
         gitclone: {
             clone: {
                 options: {
                     repository: 'https://github.com/Desertsnowman/UIX',
-                    branch: 'master',
+                    branch: 'v2',
                     directory: 'uix'
                 }
             }
@@ -81,6 +89,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks( 'grunt-text-replace' );
 
     //register default task
-    grunt.registerTask( 'uix', [ 'copy', 'replace', 'gitclone', 'shell:install', 'shell:build' ] );
+    grunt.registerTask( 'default', [ 'copy', 'replace', 'gitclone', 'shell:install', 'shell:build' ] );
 
 };
