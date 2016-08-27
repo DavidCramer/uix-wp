@@ -81,7 +81,7 @@ module.exports = function (grunt) {
             }
         },
         clean: {
-          build: ["../uix-install"],
+          installer: ["uix-install/**"],
         }
     });
 
