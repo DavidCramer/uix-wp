@@ -1,18 +1,18 @@
 <?php
 /**
  * @package   uixv2
- * @author    {{author}}
+ * @author    %author%
  * @license   GPL-2.0+
  * @link      
- * @copyright 2016 {{author}}
+ * @copyright 2016 %author%
  *
  * @wordpress-plugin
- * Plugin Name: {{name}}
- * Plugin URI:  {{url}}
- * Description: {{description}}
- * Version:     {{version}}
- * Author:      {{author}}
- * Author URI:  {{url}}
+ * Plugin Name: %name%
+ * Plugin URI:  %url%
+ * Description: %description%
+ * Version:     %version%
+ * Author:      %author%
+ * Author URI:  %url%
  * Text Domain: text-domain
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt

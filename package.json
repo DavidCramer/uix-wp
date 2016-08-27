@@ -4,7 +4,7 @@
 	"plugin_name"	: "My Plugin",
 	"description"	: "My Plugins Description",
 	"prefix"		: "MYPLGN",
-	"text-domain"	: "my-plugin",
+	"textdomain"	: "my-plugin",
 	"version"		: "1.0.0",
 	"author"		: "David Cramer",
 	"url"			: "http://cramer.co.za",

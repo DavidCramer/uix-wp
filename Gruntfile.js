@@ -17,40 +17,44 @@ module.exports = function (grunt) {
         },
         replace : {
             plugin_file: {
-                src: [ 'plugin.php' ],
+                src: [ 'plugin.php', 'includes/**/*.php' ],
                 overwrite: true,
                 replacements: [
                     {
-                        from: "{{namespace}}",
+                        from: "%namespace%",
                         to: "<%= pkg.namespace %>"
                     },
                     {
-                        from: "{{slug}}",
+                        from: "%slug%",
                         to: "<%= pkg.slug %>"
                     },
                     {
-                        from: "{{prefix}}",
+                        from: "%prefix%",
                         to: "<%= pkg.prefix %>"
                     },
                     {
-                        from: "{{name}}",
+                        from: "%name%",
                         to: "<%= pkg.plugin_name %>"
                     },
                     {
-                        from: "{{description}}",
+                        from: "%description%",
                         to: "<%= pkg.description %>"
                     },
                     {
-                        from: "{{author}}",
+                        from: "%author%",
                         to: "<%= pkg.author %>"
                     },
                     {
-                        from: "{{url}}",
+                        from: "%url%",
                         to: "<%= pkg.url %>"
                     },
                     {
-                        from: "{{version}}",
+                        from: "%version%",
                         to: "<%= pkg.version %>"
+                    },
+                    {
+                        from: "text-domain",
+                        to: "<%= pkg.textdomain %>"
                     },
                     {
                         from: 'uixv2',
