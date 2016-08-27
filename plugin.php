@@ -1,19 +1,19 @@
 <?php
 /**
- * @package   uix-plugin
- * @author    David Cramer
+ * @package   uixv2
+ * @author    %author%
  * @license   GPL-2.0+
  * @link      
- * @copyright 2016 David Cramer
+ * @copyright 2016 %author%
  *
  * @wordpress-plugin
- * Plugin Name: UIX implementation Example Plugin
- * Plugin URI:  http://cramer.co.za
- * Description: An example plugin to demonstrate the UIX plugin platform
- * Version:     1.0.0
- * Author:      David Cramer
- * Author URI:  http://cramer.co.za
- * Text Domain: uix-plugin
+ * Plugin Name: %name%
+ * Plugin URI:  %url%
+ * Description: %description%
+ * Version:     %version%
+ * Author:      %author%
+ * Author URI:  %url%
+ * Text Domain: text-domain
  * License:     GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path: /languages
@@ -24,27 +24,37 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define('UIX_PLUGIN_PATH',  plugin_dir_path( __FILE__ ) );
-define('UIX_PLUGIN_CORE',  __FILE__ );
-define('UIX_PLUGIN_URL',  plugin_dir_url( __FILE__ ) );
-define('UIX_PLUGIN_VER',  '1.0.0' );
+define('UIXV2_PATH',  plugin_dir_path( __FILE__ ) );
+define('UIXV2_CORE',  __FILE__ );
+define('UIXV2_URL',  plugin_dir_url( __FILE__ ) );
+define('UIXV2_VER',  '1.0.0' );
 
-// Load instance
-add_action( 'plugins_loaded', function(){
-	// include the library
-	include_once UIX_PLUGIN_PATH . 'classes/uix.php';
+/**
+ * locate and find class via classes folder tructure.
+ *
+ * @since 2.0.0
+ *
+ * @param string $class     class name to be checked and autoloaded
+ */
+function uixv2_autoload_class( $class ){
+    $parts = explode( '\\', $class );
+    $name = array_shift( $parts );
+    if( file_exists( UIXV2_PATH . 'classes/' . $name ) ){        
+        $class_file = UIXV2_PATH . 'classes/' . $name . '/' . implode( '/', $parts ) . '.php';
+        if( file_exists( $class_file ) ){
+            include_once $class_file;
+        }
+    }
+}
+spl_autoload_register( 'uixv2_autoload_class', true, false );
+
+// bootstrap plugin load
+add_action( 'plugins_loaded', 'uixv2_plugin_bootstrap', 200 );
+function uixv2_plugin_bootstrap(){
+
+	// start DB Post-Types UI
+	new \uixv2\ui();
+	new \uixv2\core();
+
 	
-	// get the pages
-	$pages = include UIX_PLUGIN_PATH . 'includes/pages.php';
-
-	// initialize admin UI
-	\v1_0_0\ui\uix::get_instance( $pages, 'uix-plugin' );
-
-	// front
-	if( !is_admin() ){
-		// front class
-		include_once UIX_PLUGIN_PATH . 'classes/front.php';
-		
-		\v1_0_0\front\core::get_instance( $pages, 'uix-plugin' );
-	}
-} );
+}

@@ -1,5 +1,5 @@
-# uix-plugin
-WordPress Plugin example for using the UIX framework.
+# uix-wp
 
-This is still very much a proof of concept. The main idea is to turn the system I've used for most of my plugins at CalderaWP into a framework so I dont have to repeat myself so much.
+**UIX based plugin starter for WordPress**
 
+To use download to your plugin folder, edit `package.json` with your plugin details. Run `npm install`

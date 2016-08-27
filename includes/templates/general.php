@@ -2,7 +2,7 @@
 /**
  * Example page template 
  *
- * @package   /uix/templates
+ * @package   templates
  * @author    David Cramer
  * @license   GPL-2.0+
  * @link      
@@ -15,6 +15,15 @@
 
 <p>In order to tell the object what values, we need to have input fields. So the object is represented as a form, using the fields <code>name</code> attribute to define the context.</p>
 <p>Below you'll see how the fields affect the config object.</p>
+
+<p>
+	Recalling a setting value in code <code>\namespace\ui\uix::get_setting('&lt;page_slug&gt;[ .tab_slug [.field_name ] ] ]');</code>
+</p>
+<p>
+	So for this example to get the lastname you would do: <code>\namespace\ui\uix::get_setting('uix.general.lastname');</code><br>
+	to get the whole tab as an array: <code>\namespace\ui\uix::get_setting('uix.general');</code><br>
+	
+</p>
 
 <div style="float:left; Width:300px;min-height:200px;">
 <h4>Some input Fields</h4>
@@ -33,8 +42,4 @@
 </div>
 <div style="float:left; Width:600px;min-height:200px;">
 <h4>Current Config Object</h4>
-<pre style="background: transparent;"><code style="background: transparent;" class="language-javascript" id="highlight-object">{{json this}}</code></pre>
-{{#script}}
-	Prism.highlightElement( document.getElementById( "highlight-object" ) );
-{{/script}}
-</div>
+<pre style="background: transparent;margin-left: 20px;"><code>{{json this}}</code></pre>
