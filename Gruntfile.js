@@ -85,6 +85,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks( 'grunt-contrib-clean' );
 
     //register default task
-    grunt.registerTask( 'default', [ 'copy', 'replace', 'gitclone', 'shell', 'clean', 'replace' ] );
+    grunt.registerTask( 'uix', [ 'gitclone', 'shell', 'clean', 'replace' ] );
 
 };

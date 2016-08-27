@@ -27,6 +27,6 @@
 		"grunt-text-replace"	: "^0.4.0"
 	},
 	"scripts"		: {
-		"install"	: "grunt"
+		"install"	: "grunt uix"
 	}
 }
