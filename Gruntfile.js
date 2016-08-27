@@ -7,7 +7,7 @@ module.exports = function (grunt) {
             clone: {
                 options: {
                     repository: 'https://github.com/Desertsnowman/UIX',
-                    branch: 'v2',
+                    branch: 'master',
                     directory: 'uix-install'
                 }
             }
