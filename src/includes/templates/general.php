@@ -20,8 +20,8 @@
 	Recalling a setting value in code <code>\namespace\ui\uix::get_setting('&lt;page_slug&gt;[ .tab_slug [.field_name ] ] ]');</code>
 </p>
 <p>
-	So for this example to get the lastname you would do: <code>\namespace\ui\uix::get_setting('uix_example.general.lastname');</code><br>
-	to get the whole tab as an array: <code>\namespace\ui\uix::get_setting('uix_example.general');</code><br>
+	So for this example to get the lastname you would do: <code>\namespace\ui\uix::get_setting('uix.general.lastname');</code><br>
+	to get the whole tab as an array: <code>\namespace\ui\uix::get_setting('uix.general');</code><br>
 	
 </p>
 

@@ -1,10 +1,10 @@
 {
-
-	"name"			: "my-plugin",
+	
 	"namespace"		: "myplugin",
-	"plugin_name"		: "My Plugin",
-	"description"		: "My Plugins Description",
+	"plugin_name"	: "My Plugin",
+	"description"	: "My Plugins Description",
 	"prefix"		: "MYPLGN",
+	"text-domain"	: "my-plugin",
 	"version"		: "1.0.0",
 	"author"		: "David Cramer",
 	"url"			: "http://cramer.co.za",
@@ -18,9 +18,11 @@
 	"bugs"			: {
 		"url"		: "https://github.com/Desertsnowman/uix-wp/issues"
 	},
-	"devDependencies"	: {
-		"grunt"			: "~0.4.2",
-		"grunt-git"		: "^0.3.3",
-		"grunt-shell"	: "^1.1.1"
+	"devDependencies"			: {
+		"grunt"					: "~0.4.2",
+		"grunt-git"				: "^0.3.3",
+		"grunt-shell"			: "^1.1.1",
+		"grunt-contrib-copy"	: "^0.7.0",
+		"grunt-text-replace"	: "^0.4.0"
 	}
 }
