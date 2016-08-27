@@ -52,9 +52,9 @@ spl_autoload_register( 'uixv2_autoload_class', true, false );
 add_action( 'plugins_loaded', 'uixv2_plugin_bootstrap', 200 );
 function uixv2_plugin_bootstrap(){
 
-	// start DB Post-Types UI
+	// init UI
 	new \uixv2\ui();
+    // init plugin logic
 	new \uixv2\core();
 
-	
 }
