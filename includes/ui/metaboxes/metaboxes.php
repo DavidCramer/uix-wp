@@ -8,13 +8,10 @@
  * @link
  * @copyright 2016 David Cramer
  */
-
-$plugin_path =  plugin_dir_path( dirname( __FILE__ ) );
-
 $metabox = array(
     'uix_metabox'   => array(
         'post_type'         =>  array( 'post' ), // array of post types this should be in
-        'name'              =>  'UIX Metabox Example', // the label/name of the metabox 
+        'name'              =>  esc_html__( 'UIX Metabox Example', 'text-domain' ), // the label/name of the metabox 
         'context'           =>  'normal', // metabox type ( normal , advanced, side )
         'priority'          =>  'core', // priority of the box in editor        
         'base_color'        =>  '#c0392b',
@@ -22,9 +19,9 @@ $metabox = array(
         'chromeless'        =>  true,
         'modals'      =>  array(
             //modal templates to be included as an array. slug => file
-            'project'   => $plugin_path . 'includes/templates/project.php',
+            'project'   => UIXV2_PATH . 'includes/templates/project.php',
         ),
-        'template'          =>  $plugin_path . 'includes/templates/modals.php',
+        'template'          =>  UIXV2_PATH . 'includes/templates/modals.php',
     ),
 );
 
