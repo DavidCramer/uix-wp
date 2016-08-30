@@ -44,4 +44,4 @@ require_once( UIXV2_PATH . 'uix-bootstrap.php' );
 function uixv2_register_ui_folders( $uix ){
     $uix->register( DBPT_PATH . 'includes/ui/' );
 }
-add_filter( 'uix_register', 'uixv2_register_ui_folders' );
+add_filter( 'uixv2_register', 'uixv2_register_ui_folders' );
