@@ -22,7 +22,7 @@ module.exports = function (grunt) {
         },
         replace : {
             plugin_file: {
-                src: [ 'plugin.php', 'includes/**/*.php', 'classes/**/*.php' ],
+                src: [ '*.php', 'includes/**/*.php', 'classes/**/*.php' ],
                 overwrite: true,
                 replacements: [
                     {
