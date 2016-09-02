@@ -56,6 +56,18 @@ $posttypes = array(
             'publicly_queryable'    => true,
             'capability_type'       => 'page',
         ),
+        'help'  => array(   // the wordpress contextual help is also included
+            // key is the help slug
+            'default-help' => array(
+                'title'     =>  __( 'Easy to add Help' , 'text-domain' ),
+                'content'   =>  __( 'Just add more items to this array with a unique slug/key.', 'text-domain' ),
+            ),
+            'more-help' => array(
+                'title'     =>  __( 'Makes things Easy' , 'text-domain' ),
+                'content'   =>  __( 'the content can also be a file path to a template', 'text-domain' ),
+            )
+        ),
+        'help_sidebar' => __( 'This can be html or a path to a file as well.', 'text-domain' ),
     ),
 );
 
