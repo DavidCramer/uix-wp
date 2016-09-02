@@ -32,7 +32,7 @@ define('UIXV2_VER',  '2.0.0' );
 
 /* If Composer */
 //autoload dependencies
-//require_once( DBPT_PATH . 'vendor/autoload.php' );
+//require_once( UIXV2_PATH . 'vendor/autoload.php' );
 /* END Composer */
 
 /* If UIX Installer */
@@ -42,6 +42,6 @@ require_once( UIXV2_PATH . 'uix-bootstrap.php' );
 
 // Register UI folders.
 function uixv2_register_ui_folders( $uix ){
-    $uix->register( DBPT_PATH . 'includes/ui/' );
+    $uix->register( UIXV2_PATH . 'includes/ui/' );
 }
 add_filter( 'uixv2_register', 'uixv2_register_ui_folders' );
