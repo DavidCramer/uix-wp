@@ -85,7 +85,7 @@ $metabox = array(
             'template'         => array(
                 'label'         => __( 'Template', 'text-domain'), // required
                 'icon'          => 'dashicons-layout', // not required
-                'template'      => UIXV2_PATH . 'includes/ui/templates/metabox-template.php',
+                'template'      => UIXV2_PATH . 'includes/templates/metabox-template.php',
             ),
         ),
     ),
