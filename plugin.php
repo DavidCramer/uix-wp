@@ -1,6 +1,6 @@
 <?php
 /**
- * @package   uixv2
+ * @package   uix2
  * @author    %author%
  * @license   GPL-2.0+
  * @link      
@@ -25,23 +25,23 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Constants
-define('UIXV2_PATH',  plugin_dir_path( __FILE__ ) );
-define('UIXV2_CORE',  __FILE__ );
-define('UIXV2_URL',  plugin_dir_url( __FILE__ ) );
-define('UIXV2_VER',  '2.0.0' );
+define('UIX2_PATH',  plugin_dir_path( __FILE__ ) );
+define('UIX2_CORE',  __FILE__ );
+define('UIX2_URL',  plugin_dir_url( __FILE__ ) );
+define('UIX2_VER',  '2.0.0' );
 
 /* If Composer */
 //autoload dependencies
-//require_once( UIXV2_PATH . 'vendor/autoload.php' );
+//require_once( UIX2_PATH . 'vendor/autoload.php' );
 /* END Composer */
 
 /* If UIX Installer */
 //Load UIX Bootstrap
-require_once( UIXV2_PATH . 'uix-bootstrap.php' );
+require_once( UIX2_PATH . 'uix-bootstrap.php' );
 /* END UIX Installer */
 
 // Register UI folders.
-function uixv2_register_ui_folders( $uix ){
-    $uix->register( UIXV2_PATH . 'includes/ui/' );
+function uix2_register_ui_folders( $uix ){
+    $uix->register( UIX2_PATH . 'ui/' );
 }
-add_filter( 'uixv2_register', 'uixv2_register_ui_folders' );
+add_filter( 'uix2_register', 'uix2_register_ui_folders' );
