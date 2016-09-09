@@ -1,21 +1,21 @@
 {
-    "name": "My Plugin",
-    "description": "My Plugins Description",
-    "type": "wordpress-plugin",
-    "keywords": [
+    "name"          : "My Plugin",
+    "description"   : "My Plugins Description",
+    "type"          : "wordpress-plugin",
+    "keywords"      : [
         "wordpress"
     ],
-    "license": "GPL-2.0+",
-    "authors": [
+    "license"       : "GPL-2.0+",
+    "authors"       : [
         {
-            "name": "David Cramer",
-            "homepage": "http://cramer.co.za",
-            "role": "Developer"
+            "name"      : "David Cramer",
+            "homepage"  : "http://cramer.co.za",
+            "role"      : "Developer"
         }
     ],
-    "require": {
-        "php": ">=5.3.0",
-        "desertsnowman/uix": "dev-master"
+    "require"       : {
+        "php"               : ">=5.3.0",
+        "desertsnowman/uix" : "dev-master"
     },
-    "minimum-stability" : "dev"
+    "minimum-stability"     : "dev"
 }

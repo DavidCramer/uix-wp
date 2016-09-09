@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         gitclone: {
             clone: {
                 options: {
-                    repository: 'https://github.com/Desertsnowman/UIX',
+                    repository: 'https://github.com/Desertsnowman/uix',
                     branch: 'master',
                     directory: 'uix-install'
                 }
@@ -62,11 +62,11 @@ module.exports = function (grunt) {
                         to: "<%= pkg.textdomain %>"
                     },
                     {
-                        from: 'uixv2',
+                        from: 'uix',
                         to: "<%= pkg.namespace %>"
                     },
                     {
-                        from: 'UIXV2',
+                        from: 'UIX',
                         to: "<%= pkg.prefix %>"
                     }                
                 ]
