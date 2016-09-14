@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
     // Project configuration.
-    
+
     grunt.initConfig({
         pkg     : grunt.file.readJSON( 'package.json' ),
         gitclone: {
@@ -22,7 +22,7 @@ module.exports = function (grunt) {
         },
         replace : {
             plugin_file: {
-                src: [ '*.php', 'includes/**/*.php', 'classes/**/*.php' ],
+                src: [ '*.php', 'includes/**/*.php', 'classes/**/*.php','assets/**/*.css','assets/**/*.js' ],
                 overwrite: true,
                 replacements: [
                     {
@@ -68,12 +68,12 @@ module.exports = function (grunt) {
                     {
                         from: 'UIX',
                         to: "<%= pkg.prefix %>"
-                    }                
+                    }
                 ]
             }
-        },        
+        },
         clean: {
-          installer: ["uix-install/**"],
+            installer: ["uix-install/**"],
         }
     });
 
