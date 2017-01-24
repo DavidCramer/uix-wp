@@ -7,7 +7,7 @@ module.exports = function (grunt) {
             clone: {
                 options: {
                     repository: 'https://github.com/Desertsnowman/uix',
-                    branch: 'master',
+                    branch: '3.0.x',
                     directory: 'uix-install'
                 }
             }
@@ -73,7 +73,7 @@ module.exports = function (grunt) {
             }
         },
         clean: {
-            installer: ["uix-install/**"],
+            installer: ["uix-install/**", "uix-plugin.php"],
         }
     });
 
