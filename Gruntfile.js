@@ -12,12 +12,58 @@ module.exports = function (grunt) {
                 }
             }
         },
-        shell: {
-            install: {
-                command: 'npm install --prefix ./uix-install'
-            },
-            build: {
-                command: "grunt --slug=<%= pkg.namespace %> --base ./uix-install --gruntfile ./uix-install/GruntFile.js default"
+        copy: {
+            main: {
+                files:[
+                    {
+                        expand: false,
+                        cwd: './',
+                        src: 'uix-install/uix-bootstrap.php',
+                        dest: '<%= pkg.namespace %>-bootstrap.php'
+                    },
+                    {
+                        expand: false,
+                        cwd: './',
+                        src: 'uix-install/uix-plugin.php',
+                        dest: '<%= pkg.namespace %>-plugin.php'
+                    },
+                    {
+                        expand: true,
+                        cwd: './uix-install/includes/',
+                        src: '**',
+                        dest: 'includes/'
+                    },
+                    {
+                        expand: true,
+                        cwd: './uix-install/assets/css/',
+                        src: '**',
+                        dest: 'assets/css/'
+                    },
+                    {
+                        expand: true,
+                        cwd: './uix-install/assets/js/',
+                        src: '**',
+                        dest: 'assets/js/'
+                    },
+                    {
+                        expand: true,
+                        cwd: './uix-install/assets/svg/',
+                        src: '**',
+                        dest: 'assets/svg/'
+                    },
+                    {
+                        expand: true,
+                        cwd: './uix-install/assets/controls/',
+                        src: '**',
+                        dest: 'assets/controls/'
+                    },
+                    {
+                        expand: true,
+                        cwd: './uix-install/classes/uix/',
+                        src: '**',
+                        dest: 'classes/<%= pkg.namespace %>/'
+                    }
+                ]
             }
         },
         replace : {
@@ -72,6 +118,12 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        rename: {
+            core: {
+                src: './classes/<%= pkg.namespace %>/ui/uix.php',
+                dest: './classes/<%= pkg.namespace %>/ui/<%= pkg.namespace %>.php'
+            }
+        },
         clean: {
             installer: ["uix-install/**", "uix-plugin.php"],
         }
@@ -83,8 +135,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks( 'grunt-git' );
     grunt.loadNpmTasks( 'grunt-text-replace' );
     grunt.loadNpmTasks( 'grunt-contrib-clean' );
+    grunt.loadNpmTasks( 'grunt-rename' );
 
     //register default task
-    grunt.registerTask( 'uix', [ 'gitclone', 'shell', 'clean', 'replace' ] );
+    grunt.registerTask( 'uix', [ 'gitclone', 'copy', 'rename', 'clean', 'replace' ] );
 
 };
