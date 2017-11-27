@@ -112,6 +112,14 @@ module.exports = function (grunt) {
                         to: "<%= pkg.namespace %>"
                     },
                     {
+                        from: 'Plugin Name: UIX',
+                        to: "Plugin Name: <%= pkg.plugin_name %>"
+                    },
+                    {
+                        from: 'Description: UI Framework for WordPress Plugins.',
+                        to: "Description: <%= pkg.description %>"
+                    },
+                    {
                         from: 'UIX',
                         to: "<%= pkg.prefix %>"
                     }
