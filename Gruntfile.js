@@ -6,8 +6,8 @@ module.exports = function (grunt) {
         gitclone: {
             clone: {
                 options: {
-                    repository: 'https://github.com/Desertsnowman/uix',
-                    branch: '3.0.x',
+                    repository: 'https://github.com/DavidCramer/uix',
+                    branch: 'develop',
                     directory: 'uix-install'
                 }
             }
